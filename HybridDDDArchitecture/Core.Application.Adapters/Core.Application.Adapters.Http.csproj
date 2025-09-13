@@ -8,6 +8,6 @@
 
   <ItemGroup>
     <Compile Include="C:\Users\Usuario\source\ParcialesPLA\HybridArchitecture.NET-main\HybridDDDArchitecture\Core.Application.Adapters.Http\IExternalApiClient.cs" Link="IExternalApiClient.cs" />
-  </ItemGroup>
+  </ItemGroup> hola chavales
 
 </Project>
