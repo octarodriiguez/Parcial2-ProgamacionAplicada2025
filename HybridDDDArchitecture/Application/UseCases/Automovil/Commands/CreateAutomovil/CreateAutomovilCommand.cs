@@ -14,5 +14,6 @@ namespace Application.UseCases.Automovil.Commands.CreateAutomovil
         public string modelo { get; set; }
         public string color { get; set; }
         
+        
     }
 }
