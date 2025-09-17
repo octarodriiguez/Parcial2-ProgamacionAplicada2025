@@ -16,7 +16,6 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Marca = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Modelo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Fabricacion = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -27,19 +26,6 @@ namespace Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Automovil", x => x.Id);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "DummyEntity",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DummyPropertyOne = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    DummyPropertyTwo = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_DummyEntity", x => x.Id);
-                });
         }
 
         /// <inheritdoc />
@@ -47,9 +33,6 @@ namespace Infrastructure.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Automovil");
-
-            migrationBuilder.DropTable(
-                name: "DummyEntity");
         }
     }
 }

@@ -33,9 +33,6 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("Fabricacion")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Marca")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Modelo")
                         .HasColumnType("nvarchar(max)");
 
@@ -48,22 +45,6 @@ namespace Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Automovil", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Entities.DummyEntity", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("DummyPropertyOne")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DummyPropertyTwo")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("DummyEntity", (string)null);
                 });
 #pragma warning restore 612, 618
         }

@@ -9,7 +9,7 @@ namespace Infrastructure.Repositories.Sql
     /// </summary>
     public class StoreDbContext : DbContext
     {
-        //public DbSet<DummyEntity> DummyEntity { get; set; }
+        // Se ha eliminado el DbSet de DummyEntity para evitar conflictos de migración
         public DbSet<Automovil> Automoviles { get; set; }
 
         public StoreDbContext(DbContextOptions<StoreDbContext> options) : base(options)
@@ -27,8 +27,12 @@ namespace Infrastructure.Repositories.Sql
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<DummyEntity>().ToTable("DummyEntity");
+            // Se ha corregido el nombre de la tabla de "Automovile" a "Automovil"
             modelBuilder.Entity<Automovil>().ToTable("Automovil");
+
+            // Si necesitas usar DummyEntity en el futuro, puedes descomentar esto y el DbSet,
+            // pero primero asegúrate de que esa entidad esté bien configurada.
+            // modelBuilder.Entity<DummyEntity>().ToTable("DummyEntity");
         }
     }
 }

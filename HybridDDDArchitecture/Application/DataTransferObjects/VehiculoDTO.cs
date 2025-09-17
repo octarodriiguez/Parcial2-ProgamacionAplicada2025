@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.UseCases.Automovil.Commands.CreateAutomovil
+namespace Application.DataTransferObjects
 {
-    internal interface CreateAutomovilCommand
+    public class VehiculoDTO
     {
     }
 }

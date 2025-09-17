@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Infraestructure.Reposi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Domain", "Core.Domain\Core.Domain.csproj", "{7C878F20-BB69-4EF4-AF69-4540EEA5F246}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template-API", "Template-API\Template-API.csproj", "{84BFB037-3F3D-EBC4-5394-EC960187A5C8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template_API", "Template-API\Template_API.csproj", "{84BFB037-3F3D-EBC4-5394-EC960187A5C8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{F80C4E72-27A0-12B5-0634-DD5C11CFB0C1}"
 EndProject
