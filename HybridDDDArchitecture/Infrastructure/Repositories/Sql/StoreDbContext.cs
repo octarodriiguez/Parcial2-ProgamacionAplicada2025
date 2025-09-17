@@ -27,11 +27,9 @@ namespace Infrastructure.Repositories.Sql
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Se ha corregido el nombre de la tabla de "Automovile" a "Automovil"
+            
             modelBuilder.Entity<Automovil>().ToTable("Automovil");
 
-            // Si necesitas usar DummyEntity en el futuro, puedes descomentar esto y el DbSet,
-            // pero primero asegúrate de que esa entidad esté bien configurada.
             // modelBuilder.Entity<DummyEntity>().ToTable("DummyEntity");
         }
     }
