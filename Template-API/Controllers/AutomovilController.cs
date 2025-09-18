@@ -1,4 +1,5 @@
 ﻿using Application.UseCases.Automovil.Commands.CreateAutomovil;
+using Application.UseCases.Automovil.Commands.DeleteAutomovil;
 using Application.UseCases.Automovil.Queries.GetAllAutomovil;
 using Controllers;
 using Core.Application;
@@ -50,14 +51,14 @@ namespace Template_API.Controllers
         //    return NoContent();
         //}
 
-        //[HttpDelete("api/v1/[Controller]/{id}")]
-        //public async Task<IActionResult> Delete(int id)
-        //{
-        //    if (id <= 0) return BadRequest();
+        [HttpDelete("api/v1/[Controller]/{id}")]
+        public async Task<IActionResult> Delete(string id)
+        {
+           if (id is null) return BadRequest();
 
-        //    await _commandQueryBus.Send(new DeleteDummyEntityCommand { DummyIdProperty = id });
+           await _commandQueryBus.Send(new DeleteAutomovilCommand { Id = id });
 
-        //    return NoContent();
-        //}
+          return NoContent();
+        }
     }
 }
