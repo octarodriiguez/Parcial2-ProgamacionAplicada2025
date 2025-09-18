@@ -10,8 +10,10 @@ namespace Application.Repositories
 {
     public interface IAutomovilRepository : IRepository<Automovil>
     {
+        
+        // Cambia el tipo de retorno de Task a Task<Automovil>
+        Task<Automovil> GetByChasisAsync(string numeroChasis);
         Task<IEnumerable<Automovil>> GetAllAsync();
-        Task<Automovil> GetByIdAsync(int id);
-        Task SaveAsync();
+
     }
 }

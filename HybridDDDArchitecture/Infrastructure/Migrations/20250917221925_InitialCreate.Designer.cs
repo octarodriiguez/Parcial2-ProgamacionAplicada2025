@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Migrations
 {
     [DbContext(typeof(StoreDbContext))]
-    [Migration("20250917030951_InitialCreate")]
+    [Migration("20250917221925_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -35,6 +35,9 @@ namespace Infrastructure.Migrations
 
                     b.Property<DateTime>("Fabricacion")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Marca")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Modelo")
                         .HasColumnType("nvarchar(max)");

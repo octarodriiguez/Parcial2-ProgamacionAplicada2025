@@ -1,26 +1,36 @@
 ﻿using Application.Repositories;
 using Core.Infraestructure.Repositories.Sql;
 using Domain.Entities;
-using System.Linq.Expressions;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Repositories.Sql
 {
-    internal sealed class AutomovilRepository(StoreDbContext context) : BaseRepository<Automovil>(context), IAutomovilRepository
-
+    internal sealed class AutomovilRepository(StoreDbContext _context) : BaseRepository<Automovil>(_context), IAutomovilRepository
     {
-        public Task<IEnumerable<Automovil>> GetAllAsync()
+        // Ya no necesitas el método AddAsync aquí, ya que el BaseRepository lo implementa
+
+        public async Task<IEnumerable<Automovil>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Set<Automovil>().ToListAsync();
         }
 
-        public Task<Automovil> GetByIdAsync(int id)
+        public async Task<Automovil> GetByChasisAsync(string numeroChasis)
         {
-            throw new NotImplementedException();
+            return await _context.Set<Automovil>().FirstOrDefaultAsync(a => a.NumeroChasis == numeroChasis);
+        }
+
+        public async Task<Automovil> GetByIdAsync(string id)
+        {
+            return await _context.Set<Automovil>().FindAsync(id);
         }
 
         public Task SaveAsync()
         {
-            throw new NotImplementedException();
+            return _context.SaveChangesAsync();
         }
+
+        
     }
 }

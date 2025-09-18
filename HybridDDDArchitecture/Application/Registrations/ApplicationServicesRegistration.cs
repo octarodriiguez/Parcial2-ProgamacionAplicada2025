@@ -15,6 +15,7 @@ namespace Application.Registrations
             /* Automapper */
             services.AddAutoMapper(config => config.AddMaps(Assembly.GetExecutingAssembly()));
 
+
             /* EventBus */
             services.AddPublishers();
             services.AddSubscribers();

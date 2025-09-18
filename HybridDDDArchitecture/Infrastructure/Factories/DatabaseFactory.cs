@@ -1,4 +1,5 @@
-﻿using Application.Repositories;
+﻿using Application.ApplicationServices.AutomovilServices;
+using Application.Repositories;
 using Domain.Others.Utils;
 using Infrastructure.Constants;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,7 @@ namespace Infrastructure.Factories
 
             /* Sql Repositories */
             services.AddTransient<IDummyEntityRepository, Repositories.Sql.DummyEntityRepository>();
+            services.AddTransient<IAutomovilAplicationService, Application.ApplicationServices.AutomovilServices.AutomovilApplicationService>();
 
             return services;
         }

@@ -1,4 +1,5 @@
-﻿using Application.UseCases.Automovil.Queries.GetAllAutomovil;
+﻿using Application.UseCases.Automovil.Commands.CreateAutomovil;
+using Application.UseCases.Automovil.Queries.GetAllAutomovil;
 using Controllers;
 using Core.Application;
 using Microsoft.AspNetCore.Http;
@@ -29,15 +30,15 @@ namespace Template_API.Controllers
         //    return Ok(entity);
         //}
 
-        //[HttpPost("api/v1/[Controller]")]
-        //public async Task<IActionResult> Create(CreateDummyEntityCommand command)
-        //{
-        //    if (command is null) return BadRequest();
+        [HttpPost("api/v1/[Controller]")]
+        public async Task<IActionResult> Create(CreateAutomovilCommand command)
+        {
+            if (command is null) return BadRequest();
 
-        //    var id = await _commandQueryBus.Send(command);
+            var id = await _commandQueryBus.Send(command);
 
-        //    return Created($"api/[Controller]/{id}", new { Id = id });
-        //}
+            return Created($"api/[Controller]/{id}", new { Id = id });
+        }
 
         //[HttpPut("api/v1/[Controller]")]
         //public async Task<IActionResult> Update(UpdateDummyEntityCommand command)

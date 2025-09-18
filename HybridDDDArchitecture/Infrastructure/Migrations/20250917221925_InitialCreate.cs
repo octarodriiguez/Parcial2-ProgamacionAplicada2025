@@ -16,6 +16,7 @@ namespace Infrastructure.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Marca = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Modelo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Color = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Fabricacion = table.Column<DateTime>(type: "datetime2", nullable: false),
