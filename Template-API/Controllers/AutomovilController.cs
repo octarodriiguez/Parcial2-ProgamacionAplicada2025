@@ -34,12 +34,12 @@ namespace Template_API.Controllers
             return Ok(entity);
         }
 
-        [HttpGet("api/v1/[Controller]/{numeroChasis}")]
-        public async Task<IActionResult> GetByChasisAsync(string numeroChasis)
+        [HttpGet("/api/v1/[Controller]/Chasis/{NumeroChasis}")]
+        public async Task<IActionResult> GetByChasisAsync(string NumeroChasis)
         {
-            if (string.IsNullOrEmpty(numeroChasis)) return BadRequest();
+            if (string.IsNullOrEmpty(NumeroChasis)) return BadRequest();
 
-            var entity = await _commandQueryBus.Send(new GetByChasisAutomovilQuery { NumeroChasis = numeroChasis });
+            var entity = await _commandQueryBus.Send(new GetByChasisAutomovilQuery { NumeroChasis = NumeroChasis });
 
             return Ok(entity);
         }

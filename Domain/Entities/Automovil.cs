@@ -13,7 +13,7 @@ namespace Domain.Entities
             Id = Guid.NewGuid().ToString(); // Se genera el ID en el constructor
             Marca = marca;
             Modelo = modelo;
-            //Color = color;
+            Color = color;
             Fabricacion = fabricacion;
             NumeroMotor = numeroMotor;
             NumeroChasis = numeroChasis;

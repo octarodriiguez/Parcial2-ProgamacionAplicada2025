@@ -16,7 +16,7 @@ namespace Application.UseCases.Automovil.Queries.GetByChasisAutomovil
         private readonly IAutomovilRepository _context = context ?? throw new ArgumentNullException(nameof(context));
         public async Task<VehiculoDTO> Handle(GetByChasisAutomovilQuery request, CancellationToken cancellationToken)
         {
-            Domain.Entities.Automovil entity = await _context.FindOneAsync(request.NumeroChasis) ?? throw new EntityDoesNotExistException();
+            Domain.Entities.Automovil entity = await _context.GetByChasisAsync(request.NumeroChasis) ?? throw new EntityDoesNotExistException();
             return entity.To<VehiculoDTO>();
         }
     }
