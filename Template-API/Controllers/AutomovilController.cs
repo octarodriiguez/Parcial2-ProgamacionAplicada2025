@@ -2,6 +2,7 @@
 using Application.UseCases.Automovil.Commands.DeleteAutomovil;
 using Application.UseCases.Automovil.Commands.UpdateAutomovil;
 using Application.UseCases.Automovil.Queries.GetAllAutomovil;
+using Application.UseCases.Automovil.Queries.GetByChasisAutomovil;
 using Application.UseCases.Automovil.Queries.GetByIdAutomovil;
 using Controllers;
 using Core.Application;
@@ -29,6 +30,16 @@ namespace Template_API.Controllers
             if (string.IsNullOrEmpty(id)) return BadRequest();
 
             var entity = await _commandQueryBus.Send(new GetByIdAutomovilQuery { Id = id });
+
+            return Ok(entity);
+        }
+
+        [HttpGet("api/v1/[Controller]/{numeroChasis}")]
+        public async Task<IActionResult> GetByChasisAsync(string numeroChasis)
+        {
+            if (string.IsNullOrEmpty(numeroChasis)) return BadRequest();
+
+            var entity = await _commandQueryBus.Send(new GetByChasisAutomovilQuery { NumeroChasis = numeroChasis });
 
             return Ok(entity);
         }
