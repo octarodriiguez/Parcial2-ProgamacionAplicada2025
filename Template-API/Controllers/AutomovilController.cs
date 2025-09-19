@@ -1,6 +1,7 @@
 ﻿using Application.UseCases.Automovil.Commands.CreateAutomovil;
 using Application.UseCases.Automovil.Commands.DeleteAutomovil;
 using Application.UseCases.Automovil.Queries.GetAllAutomovil;
+using Application.UseCases.Automovil.Queries.GetByIdAutomovil;
 using Controllers;
 using Core.Application;
 using Microsoft.AspNetCore.Http;
@@ -21,15 +22,15 @@ namespace Template_API.Controllers
             return Ok(entities);
         }
 
-        //[HttpGet("api/v1/[Controller]/{id}")]
-        //public async Task<IActionResult> GetById(string id)
-        //{
-        //    if (string.IsNullOrEmpty(id)) return BadRequest();
+        [HttpGet("api/v1/[Controller]/{id}")]
+        public async Task<IActionResult> GetById(string id)
+        {
+            if (string.IsNullOrEmpty(id)) return BadRequest();
 
-        //    var entity = await _commandQueryBus.Send(new GetDummyEntityByQuery { DummyIdProperty = id });
+            var entity = await _commandQueryBus.Send(new GetByIdAutomovilQuery { Id = id });
 
-        //    return Ok(entity);
-        //}
+            return Ok(entity);
+        }
 
         [HttpPost("api/v1/[Controller]")]
         public async Task<IActionResult> Create(CreateAutomovilCommand command)
