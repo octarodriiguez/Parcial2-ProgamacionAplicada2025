@@ -1,5 +1,6 @@
 ﻿using Application.DataTransferObjects;
 using Application.DomainEvents;
+using Application.DomainEvents.Vehiculo;
 using Application.UseCases.Automovil.Commands.CreateAutomovil;
 using AutoMapper;
 using Domain.Entities;
@@ -16,8 +17,13 @@ namespace Application.Mappings
             CreateMap<DummyEntity, DummyEntityCreated>().ReverseMap();
             CreateMap<DummyEntity, UpdateAutomovil>().ReverseMap();
             CreateMap<DummyEntity, DummyEntityDto>().ReverseMap();
-            CreateMap<Domain.Entities.Automovil, VehiculoDTO>();
+            //Obtener solo YYYY
+            CreateMap<Domain.Entities.Automovil, VehiculoDTO>()
+                .ForMember(dest => dest.Fabricacion, opt => opt.MapFrom(src => src.Fabricacion.Year));
+
             CreateMap<CreateAutomovilCommand, Automovil>();
+
+            CreateMap<Automovil, VehiculoCreated>(); ;
         }
     }
 }
