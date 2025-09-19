@@ -1,6 +1,8 @@
 ﻿using Core.Domain.Entities;
 using Domain.Validators;
 using System;
+using System.Security.Cryptography.X509Certificates;
+
 
 namespace Domain.Entities
 {
@@ -11,7 +13,7 @@ namespace Domain.Entities
             Id = Guid.NewGuid().ToString(); // Se genera el ID en el constructor
             Marca = marca;
             Modelo = modelo;
-            Color = color;
+            //Color = color;
             Fabricacion = fabricacion;
             NumeroMotor = numeroMotor;
             NumeroChasis = numeroChasis;
@@ -23,5 +25,14 @@ namespace Domain.Entities
         public DateTime Fabricacion { get; set; }
         public string NumeroMotor { get; set; }
         public string NumeroChasis { get; set; }
+
+        public void setColor(string color)
+        {
+            Color = color;
+        }
+        public void setNumeroMotor(string numeroMotor)
+        {
+            NumeroMotor = numeroMotor;
+        }
     }
 }

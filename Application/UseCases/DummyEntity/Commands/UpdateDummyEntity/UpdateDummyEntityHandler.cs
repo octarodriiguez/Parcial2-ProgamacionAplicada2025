@@ -22,7 +22,7 @@ namespace ESCMB.Application.UseCases.DummyEntity.Commands.UpdateDummyEntity
             {
                 _context.Update(request.DummyIdProperty, entity);
 
-                await _domainBus.Publish(entity.To<DummyEntityUpdated>(), cancellationToken);
+                await _domainBus.Publish(entity.To<UpdateAutomovil>(), cancellationToken);
             }
             catch (Exception ex)
             {

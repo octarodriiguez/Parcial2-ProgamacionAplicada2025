@@ -1,5 +1,6 @@
 ﻿using Application.UseCases.Automovil.Commands.CreateAutomovil;
 using Application.UseCases.Automovil.Commands.DeleteAutomovil;
+using Application.UseCases.Automovil.Commands.UpdateAutomovil;
 using Application.UseCases.Automovil.Queries.GetAllAutomovil;
 using Application.UseCases.Automovil.Queries.GetByIdAutomovil;
 using Controllers;
@@ -42,15 +43,15 @@ namespace Template_API.Controllers
             return Created($"api/[Controller]/{id}", new { Id = id });
         }
 
-        //[HttpPut("api/v1/[Controller]")]
-        //public async Task<IActionResult> Update(UpdateDummyEntityCommand command)
-        //{
-        //    if (command is null) return BadRequest();
+        [HttpPut("api/v1/[Controller]")]
+        public async Task<IActionResult> Update(UpdateAutomovilCommand command)
+        {
+            if (command is null) return BadRequest();
 
-        //    await _commandQueryBus.Send(command);
+            await _commandQueryBus.Send(command);
 
-        //    return NoContent();
-        //}
+            return NoContent();
+        }
 
         [HttpDelete("api/v1/[Controller]/{id}")]
         public async Task<IActionResult> Delete(string id)

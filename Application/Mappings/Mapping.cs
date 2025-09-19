@@ -14,7 +14,7 @@ namespace Application.Mappings
         public Mapping()
         {
             CreateMap<DummyEntity, DummyEntityCreated>().ReverseMap();
-            CreateMap<DummyEntity, DummyEntityUpdated>().ReverseMap();
+            CreateMap<DummyEntity, UpdateAutomovil>().ReverseMap();
             CreateMap<DummyEntity, DummyEntityDto>().ReverseMap();
             CreateMap<Domain.Entities.Automovil, VehiculoDTO>();
             CreateMap<CreateAutomovilCommand, Automovil>();
