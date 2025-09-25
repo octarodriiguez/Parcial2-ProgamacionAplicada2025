@@ -4,6 +4,7 @@ using Application.Exceptions;
 using Application.Repositories;
 using Application.UseCases.DummyEntity.Commands.UpdateDummyEntity;
 using Core.Application;
+using Application.DomainEvents.Vehiculo;
 
 namespace ESCMB.Application.UseCases.DummyEntity.Commands.UpdateDummyEntity
 {

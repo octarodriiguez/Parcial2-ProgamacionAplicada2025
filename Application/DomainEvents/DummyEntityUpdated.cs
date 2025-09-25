@@ -3,7 +3,7 @@ using static Domain.Enums.Enums;
 
 namespace Application.DomainEvents
 {
-    internal sealed class UpdateAutomovil : DomainEvent
+    internal sealed class DummyUpdateAutomovil : DomainEvent
     {
         public int DummyIdProperty { get; set; }
         public string DummyPropertyOne { get; set; }

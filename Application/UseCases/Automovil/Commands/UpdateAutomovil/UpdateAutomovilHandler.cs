@@ -2,6 +2,7 @@
 using Application.DomainEvents;
 using Application.Exceptions;
 using Application.Repositories;
+using Application.DomainEvents.Vehiculo;
 using Application.UseCases.DummyEntity.Commands.UpdateDummyEntity;
 using Core.Application;
 using System;
@@ -27,7 +28,7 @@ namespace Application.UseCases.Automovil.Commands.UpdateAutomovil
             {
                 _context.Update(request.Id, entity);
 
-                await _domainBus.Publish(entity.To<DomainEvents.UpdateAutomovil>(), cancellationToken);
+                await _domainBus.Publish(entity.To<DomainEvents.Vehiculo.UpdateAutomovil>(), cancellationToken);
             }
             catch (Exception ex)
             {
